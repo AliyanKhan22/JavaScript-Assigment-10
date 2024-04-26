@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="main-like">
+        <h2>Like;</h2>
+        <div class="like">
+            <i class="fa-solid fa-heart like" id="change"></i>
+            <p id="title"></p>
+        </div>
+
+
+    </div>
+
+
+    <script>
+        let colorChange = document.getElementById('change');
+        let text = document.getElementById('title')
+        // console.log(text);
+        let isRed = false;
+
+        addEventListener('click', () => {
+            if (isRed) {
+                isRed = false;
+                colorChange.style.color = "black";
+                text.textContent = ""
+
+            } else {
+                colorChange.style.color = "red";
+                text.textContent = "unlike"
+                isRed = true
+
+
+            }
+
+        });
+                
+        let a = ["cake", "cookie", "apple", "grape"];
+        let userCheck = prompt("Check word").toLowerCase();
+        let matchFound = false;
+        // a.indexOf(${userCheck})
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] == userCheck) {
+                matchFound = true;
+                break;
+            }
+        }
+        if (matchFound == true) {
+            document.write(userCheck +" is available at index " + a.indexOf(userCheck) + " in our bakery" );
+        } else {
+            document.write("We are sorry not available");
+        }
+
+    </script>
